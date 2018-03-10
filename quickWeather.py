@@ -1,7 +1,9 @@
 #! python3
-#quickWeather.py - Prints the weather for a location from the command line.
+# quickWeather.py - Prints the weather for a location from the command line.
 
-import json, requests, sys
+import json
+import requests
+import sys
 
 if len(sys.argv) < 2:
     print('Usage: quickWeather.py location')
@@ -9,7 +11,8 @@ if len(sys.argv) < 2:
 location = ' '.join(sys.argv[1:])
 
 
-url = 'http://api.openweathermap.org/data/2.5/forecast/daily?q={}&cnt=3'.format(location)
+url = 'http://api.openweathermap.org/data/2.5/forecast/daily?q={}&cnt=3'.format
+(location)
 response = requests.get(url)
 response.raise_for_status()
 
@@ -24,7 +27,3 @@ print(w[0]['weather'][0]['main'])
 print(w[1]['weather'][0]['main'])
 
 print(w[2]['weather'][0]['main'])
-
-
-
-

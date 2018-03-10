@@ -1,10 +1,11 @@
 #! python3
-#!stopwatch.py - A simple stopwatch program
+# stopwatch.py - A simple stopwatch program
 
 import time
 
-#Display the program's instructions.
-print('Press ENTER to begin. Afterwards, press ENTER to "click" the stopwatch. Press Ctrl-C to quit.')
+# Display the program's instructions.
+print('Press ENTER to begin. Afterwards, press ENTER to "click" the stopwatch.'
+      'Press Ctrl-C to quit.')
 input()
 print('Started.')
 startTime = time.time()
@@ -14,9 +15,9 @@ lapNum = 1
 try:
     while True:
         input()
-        lapTime = round(time.time() - lastTime,2)
+        lapTime = round(time.time() - lastTime, 2)
         totalTime = round(time.time() - startTime, 2)
-        print('Lap #{}: {} {}'.format(lapNum,totalTime,lapTime),end ='')
+        print('Lap #{}: {} {}'.format(lapNum, totalTime, lapTime), end='')
         lapNum += 1
         lastTime = time.time()
 except KeyboardInterrupt:

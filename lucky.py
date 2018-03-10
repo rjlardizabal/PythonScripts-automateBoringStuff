@@ -1,7 +1,10 @@
 #! python 3
 # lucky.py - Opens severeal Google search results.
 
-import requests, sys, webbrowser, bs4
+import requests
+import sys
+import webbrowser
+import bs4
 
 print('Googling...')
 res = requests.get('http://google.com/search?q=' + ' '.join(sys.argv[1:]))
